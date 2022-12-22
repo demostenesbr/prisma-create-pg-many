@@ -2,8 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["createMany"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -11,10 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Contact {
-  id        String @id @default(cuid())
-  firstName String
-  lastName  String
-  email     String
-  phone     String
+model Article {
+  id          Int      @id @default(autoincrement())
+  title       String   @unique
+  description String?
+  body        String
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
