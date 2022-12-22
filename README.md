@@ -46,7 +46,7 @@ $ npm run test:cov
 
 ## Support
 
-Email: [mailto:demostenes@demostenes.com.br](demostenes(at)demostenes.com.br)
+Email: [demostenes(atdemostenes.com.br](mailto:demostenes@demostenes.com.br)
 
 ## Informations
 
