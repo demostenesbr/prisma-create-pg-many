@@ -8,14 +8,14 @@ const prisma = new PrismaClient();
 async function main() {
   // create two dummy articles
   const post1 = await prisma.article.upsert({
-    where: { title: 'Prisma Adds Support for MongoDB' },
+    where: { title: 'Support for PostgresSQL' },
     update: {},
     create: {
-      title: 'Prisma Adds Support for MongoDB',
+      title: 'Support for PostgresSQL',
       body: 'Support for MongoDB has been one of the most requested features since the initial release of...',
       description:
         "We are excited to share that today's Prisma ORM release adds stable support for MongoDB!",
-      published: false,
+      published: true,
     },
   });
 
@@ -27,11 +27,35 @@ async function main() {
       body: 'Our engineers have been working hard, issuing new releases with many improvements...',
       description:
         'Learn about everything in the Prisma ecosystem and community from January to March 2022.',
+      published: false,
+    },
+  });
+  
+  const post3 = await prisma.article.upsert({
+    where: { title: "What's new in Prisma? (Q1/22)" },
+    update: {},
+    create: {
+      title: "What's new in Prisma? (Q1/22)",
+      body: 'Our engineers have been working hard, issuing new releases with many improvements...',
+      description:
+        'Learn about everything in the Prisma ecosystem and community from January to March 2022.',
       published: true,
     },
   });
 
-  console.log({ post1, post2 });
+  const post4= await prisma.article.upsert({
+    where: { title: 'Under Control' },
+    update: {},
+    create: {
+      title: 'Under Control',
+      body: 'Support for MongoDB has been one of the most requested features since the initial release of...',
+      description:
+        "We are excited to share that today's Prisma ORM release adds stable support for MongoDB!",
+      published: true,
+    },
+  });
+
+  console.log({ post1, post2, post3, post4 });
 }
 
 // execute the main function
