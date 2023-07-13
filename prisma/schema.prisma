@@ -12,7 +12,7 @@ datasource db {
 
 model Article {
   id          Int      @id @default(autoincrement())
-  title       String   @unique
+  names       String   @unique
   description String?
   body        String
   published   Boolean  @default(false)

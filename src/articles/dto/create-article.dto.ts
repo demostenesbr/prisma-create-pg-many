@@ -4,7 +4,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateArticleDto {
   @ApiProperty()
-  title: string;
+  names: string;
 
   @ApiProperty({ required: false })
   description?: string;

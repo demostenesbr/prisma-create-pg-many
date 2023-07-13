@@ -8,10 +8,10 @@ const prisma = new PrismaClient();
 async function main() {
   // create two dummy articles
   const post1 = await prisma.article.upsert({
-    where: { title: 'Support for PostgresSQL' },
+    where: { names: 'Support for PostgresSQL' },
     update: {},
     create: {
-      title: 'Support for PostgresSQL',
+      names: 'Support for PostgresSQL',
       body: 'Support for MongoDB has been one of the most requested features since the initial release of...',
       description:
         "We are excited to share that today's Prisma ORM release adds stable support for MongoDB!",
@@ -20,10 +20,10 @@ async function main() {
   });
 
   const post2 = await prisma.article.upsert({
-    where: { title: "What's new in Prisma? (Q1/22)" },
+    where: { names: "What's new in Prisma? (Q1/22)" },
     update: {},
     create: {
-      title: "What's new in Prisma? (Q1/22)",
+      names: "What's new in Prisma? (Q1/22)",
       body: 'Our engineers have been working hard, issuing new releases with many improvements...',
       description:
         'Learn about everything in the Prisma ecosystem and community from January to March 2022.',
@@ -32,10 +32,10 @@ async function main() {
   });
   
   const post3 = await prisma.article.upsert({
-    where: { title: "What's new in Prisma? (Q1/22)" },
+    where: { names: "What's new in Prisma? (Q1/22)" },
     update: {},
     create: {
-      title: "What's new in Prisma? (Q1/22)",
+      names: "What's new in Prisma? (Q1/22)",
       body: 'Our engineers have been working hard, issuing new releases with many improvements...',
       description:
         'Learn about everything in the Prisma ecosystem and community from January to March 2022.',
@@ -44,10 +44,10 @@ async function main() {
   });
 
   const post4= await prisma.article.upsert({
-    where: { title: 'Under Control' },
+    where: { names: 'Under Control' },
     update: {},
     create: {
-      title: 'Under Control',
+      names: 'Under Control',
       body: 'Support for MongoDB has been one of the most requested features since the initial release of...',
       description:
         "We are excited to share that today's Prisma ORM release adds stable support for MongoDB!",

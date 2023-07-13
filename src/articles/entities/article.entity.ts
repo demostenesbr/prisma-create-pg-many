@@ -8,7 +8,7 @@ export class ArticleEntity implements Article {
   id: number;
 
   @ApiProperty()
-  title: string;
+  names: string;
 
   @ApiProperty({ required: false, nullable: true })
   description: string | null;
